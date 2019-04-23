@@ -1,42 +1,38 @@
 {
-  "name": "soundcloud-audio",
-  "version": "1.4.0",
-  "description": "Play SoundCloud tracks and playslists in modern browsers with HTML5 Audio API",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
+  "_from": "soundcloud-audio@^1.2.2",
+  "_id": "soundcloud-audio@1.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-2kHyTfu+KNOLZuRKynaeTmj846deC1WbiDTu7rkd1/93lk9FxtgbGkNQSIy5H4gxZD9EEeTdXhkE7uiMwEXuEQ==",
+  "_location": "/soundcloud-audio",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "soundcloud-audio@^1.2.2",
+    "name": "soundcloud-audio",
+    "escapedName": "soundcloud-audio",
+    "rawSpec": "^1.2.2",
+    "saveSpec": null,
+    "fetchSpec": "^1.2.2"
   },
-  "scripts": {
-    "start": "watchify . -s SoundCloudAudio -o dist/soundcloud-audio.js -v -d",
-    "build": "browserify . -s SoundCloudAudio | uglifyjs -cm > dist/soundcloud-audio.min.js",
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers Chrome",
-    "test:watch": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/voronianski/soundcloud-audio.js.git"
-  },
-  "keywords": [
-    "soundcloud",
-    "html5",
-    "browser",
-    "audio",
-    "playlists",
-    "tracks",
-    "api",
-    "waveform",
-    "sdk"
+  "_requiredBy": [
+    "/react-soundplayer"
   ],
-  "prettier": {
-    "singleQuote": true
+  "_resolved": "https://registry.npmjs.org/soundcloud-audio/-/soundcloud-audio-1.4.0.tgz",
+  "_shasum": "2d9ceeaa8a3c63d814e18c4c2602fe3be9a99655",
+  "_spec": "soundcloud-audio@^1.2.2",
+  "_where": "/Users/conorreiland/Desktop/ProduceMusic/produce-client/node_modules/react-soundplayer",
+  "author": {
+    "name": "Dmitri Voronianski",
+    "email": "dmitri.voronianski@gmail.com"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged --ignore-path ./public"
-    }
+  "bugs": {
+    "url": "https://github.com/voronianski/soundcloud-audio.js/issues"
   },
-  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
-  "license": "MIT",
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Play SoundCloud tracks and playslists in modern browsers with HTML5 Audio API",
   "devDependencies": {
     "browserify": "^16.1.0",
     "chai": "^4.1.2",
@@ -52,5 +48,41 @@
     "uglify-js": "^3.3.12",
     "watchify": "^3.10.0"
   },
-  "dependencies": {}
+  "directories": {
+    "example": "example"
+  },
+  "homepage": "https://github.com/voronianski/soundcloud-audio.js#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --ignore-path ./public"
+    }
+  },
+  "keywords": [
+    "soundcloud",
+    "html5",
+    "browser",
+    "audio",
+    "playlists",
+    "tracks",
+    "api",
+    "waveform",
+    "sdk"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "soundcloud-audio",
+  "prettier": {
+    "singleQuote": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voronianski/soundcloud-audio.js.git"
+  },
+  "scripts": {
+    "build": "browserify . -s SoundCloudAudio | uglifyjs -cm > dist/soundcloud-audio.min.js",
+    "start": "watchify . -s SoundCloudAudio -o dist/soundcloud-audio.js -v -d",
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers Chrome",
+    "test:watch": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome"
+  },
+  "version": "1.4.0"
 }

@@ -47,7 +47,7 @@ function SoundCloud(clientId, apiUrl) {
   }
 
   if (!clientId && !apiUrl) {
-    console.info('SoundCloud API requires clientId or custom apiUrl');
+    console.info('Error: SoundCloud API requires clientId or custom apiUrl');
   }
 
   this._events = {};
@@ -58,7 +58,8 @@ function SoundCloud(clientId, apiUrl) {
   this.playing = false;
   this.duration = 0;
 
-  this.audio = document.createElement('audio');
+  this.audio = document.getElementById("GlobalAudio");
+  console.log(this.audio)
 }
 
 SoundCloud.prototype.resolve = function(url, callback) {
@@ -174,7 +175,7 @@ SoundCloud.prototype.preload = function(streamUrl, preloadType) {
   this._track = { stream_url: streamUrl };
 
   if (preloadType) {
-    this.audio.preload = preloadType;
+    //this.audio.preload = preloadType;
   }
 
   this.audio.src = this._clientId
@@ -211,26 +212,30 @@ SoundCloud.prototype.play = function(options) {
   }
 
   if (!src) {
-    throw new Error(
-      'There is no tracks to play, use `streamUrl` option or `load` method'
-    );
+    try {
+      console.log("tryna play")
+      this.audio.play();
+      //options.togglePlay();
+    } catch(e){
+      console.log(e)
+    }
+    // throw new Error(
+    //   'There is no tracks to play, use `streamUrl` option or `load` method'
+    // );
   }
 
   if (this._clientId) {
     src = _appendQueryParam(src, 'client_id', this._clientId);
   }
 
-  if (src !== this.audio.src) {
-    this.audio.src = src;
-  }
+  this.playing = true;
 
-  this.playing = src;
-
-  return this.audio.play();
+  
 };
 
-SoundCloud.prototype.pause = function() {
+SoundCloud.prototype.pause = function(option) {
   this.audio.pause();
+  //options.togglePlay();
   this.playing = false;
 };
 
